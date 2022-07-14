@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.requestDatasulPessoasPresentes = exports.promissePresentes = void 0;
 const api_1 = __importDefault(require("../services/api"));
+const brigadista_controller_1 = require("./brigadista.controller");
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 function requestDatasulPessoasPresentes() {
@@ -29,6 +30,7 @@ function requestDatasulPessoasPresentes() {
         catch (error) {
             console.log(error);
         }
+        (0, brigadista_controller_1.updateBrigadista)();
         console.log("Rodei agora: " + Date());
         return exports.promissePresentes;
     }))();
